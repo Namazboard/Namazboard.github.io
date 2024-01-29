@@ -191,7 +191,7 @@ async function TimesParse(t) {
 					})
 				TimesM = t.getMonth(); // Обновляем месяц
 				TimesList = times; // Записываем времена
-				return times[t.getDate() - 1]; // Возвращаем времена на день
+				return TimesList[t.getDate() - 1]; // Возвращаем времена на день
 			});
 	} else { // Такое разделение, чтобы в случае ошибки в fetch она вернулась из функции
 		return TimesList[t.getDate() - 1]; // Возвращаем времена на день
