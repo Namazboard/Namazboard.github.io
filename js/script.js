@@ -207,8 +207,18 @@ function Lzero(num) {
 }
 
 
+// Обработчик полноэкранного режима
+function FullScreen(element) {
+	if (document.fullscreenElement) { // Если мы уже в полноэкранном режиме...
+		document.exitFullscreen(); // То, выходим
+	} else { // Иначе...
+		element.requestFullscreen({navigationUI: "hide"}); // Делаем запрос на полноэкранный режим, прячя все элементы браузера
+  }
+}
+
+
 
 // [Действия при запуске]
-html.onclick = () => html.requestFullscreen({ navigationUI: "hide" }); // Запускаем обработчик нажатий для перевода в полноэкранный режим
+document.onclick = () => FullScreen(html); // Запускаем обработчик нажатий для перевода в полноэкранный режим
 DaySet(new Date); // Обновляем дату, времена, запускаем отчет до намаза по текущему времени
 SecHandler(); // Запускаем обработчик секунд
