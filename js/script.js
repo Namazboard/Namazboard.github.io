@@ -194,7 +194,7 @@ async function TimesParse(t) {
 				return times[t.getDate() - 1]; // Возвращаем времена на день
 			});
 	} else { // Такое разделение, чтобы в случае ошибки в fetch она вернулась из функции
-		return times[t.getDate() - 1]; // Возвращаем времена на день
+		return TimesList[t.getDate() - 1]; // Возвращаем времена на день
 	}
 }
 
