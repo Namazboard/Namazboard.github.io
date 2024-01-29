@@ -1,11 +1,12 @@
 // [DOM - элементы]
+const html = document.querySelector("html"); // Корневой контейнер (Чисто для полноэкранного режима)
+const body = document.querySelector("body"); // Главный контейнер (Нужен для графических фишек)
+const tablet = document.getElementById('tablet'); // Контейнер-табличка (Нужен для графических фишек)
 const date = document.getElementById('Date'); // Дата
 const weekday = document.getElementById('Weekday'); // День недели
 const time = document.getElementById('Time'); // Время
 const nam_times = Array.from(document.getElementsByClassName('NamTime')); // Времена намазов (Теперь это массив)
 const time_last = document.getElementById('TimeLast'); // Время до ближайшего намаза
-const tablet = document.getElementById('tablet'); // Контейнер-табличка (Нужен для графических фишек)
-const body = document.querySelector("body"); // Главный контейнер (Нужен для графических фишек)
 
 
 
@@ -208,5 +209,6 @@ function Lzero(num) {
 
 
 // [Действия при запуске]
+html.onclick = () => html.requestFullscreen({ navigationUI: "hide" }); // Запускаем обработчик нажатий для перевода в полноэкранный режим
 DaySet(new Date); // Обновляем дату, времена, запускаем отчет до намаза по текущему времени
 SecHandler(); // Запускаем обработчик секунд
